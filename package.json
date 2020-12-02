@@ -32,6 +32,10 @@
     "watch:css": "postcss src/css/viewer.css -o docs/css/viewer.css -m -w",
     "watch:js": "rollup -c -m -w"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfj1996/viewerjs-download-img.git"
+  },
   "keywords": [
     "image",
     "viewer",
