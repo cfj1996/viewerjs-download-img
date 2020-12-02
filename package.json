@@ -1,7 +1,7 @@
 {
   "name": "viewerjs-download-img",
   "description": "JavaScript image viewer download img",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/viewer.common.js",
   "module": "dist/viewer.esm.js",
   "browser": "dist/viewer.js",
@@ -89,6 +89,7 @@
     "postcss-url": "^10.1.1",
     "puppeteer": "^5.5.0",
     "rollup": "^2.33.3",
+    "sass": "^1.29.0",
     "stylelint": "^13.8.0",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-order": "^4.1.0",
@@ -113,8 +114,5 @@
   "lint-staged": {
     "{src,test}/**/*.js|*.conf*.js": "eslint --fix",
     "{src,docs}/**/*.{css,scss,html}": "stylelint --fix"
-  },
-  "dependencies": {
-    "sass": "^1.29.0"
   }
 }
