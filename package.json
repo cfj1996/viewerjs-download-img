@@ -1,5 +1,5 @@
 {
-  "name": "viewerjs-download-img",
+  "name": "viewerdownloadimg",
   "description": "JavaScript image viewer download img",
   "version": "1.0.1",
   "main": "dist/viewer.common.js",
