@@ -1,12 +1,13 @@
 /*!
- * Viewer.js v1.8.0
- * https://fengyuanchen.github.io/viewerjs
+ * ViewerDownloadImg.js v1.0.0
+ * https://github.com/cfj1996/viewerjs-download-img
  *
- * Copyright 2015-present Chen Fengyuan
- * Released under the MIT license
+ * Copyright 2015-present cfj
+ * Released under the ISC license
  *
- * Date: 2020-12-02T10:31:16.082Z
+ * Date: 2020-12-02T11:04:30.545Z
  */
+
 .viewer-zoom-in::before,
 .viewer-zoom-out::before,
 .viewer-one-to-one::before,
@@ -485,5 +486,3 @@
     display: none;
   }
 }
-
-/*# sourceMappingURL=viewer.css.map */
