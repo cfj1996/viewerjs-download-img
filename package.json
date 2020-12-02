@@ -1,7 +1,7 @@
 {
-  "name": "viewerjs",
-  "description": "JavaScript image viewer.",
-  "version": "1.8.0",
+  "name": "viewerjs-download-img",
+  "description": "JavaScript image viewer download img",
+  "version": "1.0.0",
   "main": "dist/viewer.common.js",
   "module": "dist/viewer.esm.js",
   "browser": "dist/viewer.js",
@@ -14,6 +14,7 @@
   ],
   "scripts": {
     "build": "npm run build:css && npm run build:js",
+    "buildsass": "sass src/css/viewer.scss src/css/viewer.css",
     "build:css": "postcss src/index.css -o dist/viewer.css --no-map",
     "build:js": "rollup -c",
     "clear": "del-cli dist",
@@ -28,12 +29,8 @@
     "release": "npm run clear && npm run lint && npm run build && npm run compress && npm run copy && npm test",
     "start": "npm-run-all --parallel watch:*",
     "test": "karma start",
-    "watch:css": "postcss src/index.css -o docs/css/viewer.css -m -w",
+    "watch:css": "postcss src/css/viewer.css -o docs/css/viewer.css -m -w",
     "watch:js": "rollup -c -m -w"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fengyuanchen/viewerjs.git"
   },
   "keywords": [
     "image",
@@ -51,9 +48,6 @@
     "url": "https://chenfengyuan.com/"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/fengyuanchen/viewerjs/issues"
-  },
   "homepage": "https://fengyuanchen.github.io/viewerjs",
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -115,5 +109,8 @@
   "lint-staged": {
     "{src,test}/**/*.js|*.conf*.js": "eslint --fix",
     "{src,docs}/**/*.{css,scss,html}": "stylelint --fix"
+  },
+  "dependencies": {
+    "sass": "^1.29.0"
   }
 }

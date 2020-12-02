@@ -35,7 +35,6 @@ export default {
     const { options, imageData } = this;
     let { target } = event;
     let action = getData(target, DATA_ACTION);
-
     if (!action && target.localName === 'img' && target.parentElement.localName === 'li') {
       target = target.parentElement;
       action = getData(target, DATA_ACTION);
@@ -45,7 +44,7 @@ export default {
     if (IS_TOUCH_DEVICE && event.isTrusted && target === this.canvas) {
       clearTimeout(this.clickCanvasTimeout);
     }
-
+    console.log('action', action);
     switch (action) {
       case 'mix':
         if (this.played) {
@@ -112,6 +111,10 @@ export default {
 
       case 'flip-vertical':
         this.scaleY(-imageData.scaleY || -1);
+        break;
+
+      case 'download':
+        this.download();
         break;
 
       default:

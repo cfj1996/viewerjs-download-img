@@ -12,11 +12,12 @@
   &-flip-vertical,
   &-fullscreen,
   &-fullscreen-exit,
+  &-download,
   &-close {
     &::before {
       background-image: url('../images/icons.png');
       background-repeat: no-repeat;
-      background-size: 280px;
+      background-size: 300px;
       color: transparent;
       display: block;
       font-size: 0;
@@ -91,8 +92,13 @@
     content: 'Exit Full Screen';
   }
 
-  &-close::before {
+  &-download::before {
     background-position: -260px 0;
+    content: 'Download';
+  }
+
+  &-close::before {
+    background-position: -280px 0;
     content: 'Close';
   }
 

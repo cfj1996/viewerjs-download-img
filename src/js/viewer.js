@@ -244,7 +244,6 @@ class Viewer {
         const deep = custom && isPlainObject(value);
         const name = custom ? hyphenate(index) : value;
         const show = deep && !isUndefined(value.show) ? value.show : value;
-
         if (
           !show
           || (!options.zoomable && zoomButtons.indexOf(name) !== -1)

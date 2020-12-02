@@ -1034,6 +1034,19 @@ export default {
     return this;
   },
 
+  // 下载图片
+  download() {
+    const { index, options } = this;
+
+    const item = this.items[index];
+    const img = item.querySelector('img');
+    const url = getData(img, 'originalUrl');
+    if (isFunction(options.download)) {
+      options.download(url);
+    }
+    return this;
+  },
+
   // Destroy the viewer
   destroy() {
     const { element, options } = this;

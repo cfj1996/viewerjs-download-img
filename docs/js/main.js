@@ -1,55 +1,57 @@
 window.onload = function () {
-  'use strict';
-
-  var Viewer = window.Viewer;
-  var console = window.console || { log: function () {} };
-  var pictures = document.querySelector('.docs-pictures');
-  var toggles = document.querySelector('.docs-toggles');
-  var buttons = document.querySelector('.docs-buttons');
-  var options = {
+  const { Viewer } = window;
+  const console = window.console || { log() {} };
+  const pictures = document.querySelector('.docs-pictures');
+  const toggles = document.querySelector('.docs-toggles');
+  const buttons = document.querySelector('.docs-buttons');
+  const options = {
     // inline: true,
     url: 'data-original',
-    ready: function (e) {
+    download(uri) {
+      alert(uri);
+    },
+
+    ready(e) {
       console.log(e.type);
     },
-    show: function (e) {
+    show(e) {
       console.log(e.type);
     },
-    shown: function (e) {
+    shown(e) {
       console.log(e.type);
     },
-    hide: function (e) {
+    hide(e) {
       console.log(e.type);
     },
-    hidden: function (e) {
+    hidden(e) {
       console.log(e.type);
     },
-    view: function (e) {
+    view(e) {
       console.log(e.type);
     },
-    viewed: function (e) {
+    viewed(e) {
       console.log(e.type);
     },
-    zoom: function (e) {
+    zoom(e) {
       console.log(e.type);
     },
-    zoomed: function (e) {
+    zoomed(e) {
       console.log(e.type);
     },
-    play: function (e) {
+    play(e) {
       console.log(e.type);
     },
-    stop: function (e) {
+    stop(e) {
       console.log(e.type);
-    }
+    },
   };
-  var viewer = new Viewer(pictures, options);
+  let viewer = new Viewer(pictures, options);
 
   function toggleButtons(mode) {
-    var targets;
-    var target;
-    var length;
-    var i;
+    let targets;
+    let target;
+    let length;
+    let i;
 
     if (/modal|inline|none/.test(mode)) {
       targets = buttons.querySelectorAll('button[data-enable]');
@@ -69,16 +71,16 @@ window.onload = function () {
     if (element.addEventListener) {
       element.addEventListener(type, handler, false);
     } else if (element.attachEvent) {
-      element.attachEvent('on' + type, handler);
+      element.attachEvent(`on${type}`, handler);
     }
   }
 
   toggleButtons(options.inline ? 'inline' : 'modal');
 
   toggles.onchange = function (event) {
-    var e = event || window.event;
-    var input = e.target || e.srcElement;
-    var name;
+    const e = event || window.event;
+    const input = e.target || e.srcElement;
+    let name;
 
     if (viewer) {
       name = input.getAttribute('name');
@@ -90,11 +92,11 @@ window.onload = function () {
   };
 
   buttons.onclick = function (event) {
-    var e = event || window.event;
-    var button = e.target || e.srcElement;
-    var method = button.getAttribute('data-method');
-    var target = button.getAttribute('data-target');
-    var args = JSON.parse(button.getAttribute('data-arguments')) || [];
+    const e = event || window.event;
+    const button = e.target || e.srcElement;
+    const method = button.getAttribute('data-method');
+    const target = button.getAttribute('data-target');
+    const args = JSON.parse(button.getAttribute('data-arguments')) || [];
 
     if (viewer && method) {
       if (target) {

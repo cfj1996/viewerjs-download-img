@@ -5,7 +5,7 @@
  * Copyright 2015-present Chen Fengyuan
  * Released under the MIT license
  *
- * Date: 2020-11-08T05:28:37.365Z
+ * Date: 2020-12-02T10:31:18.557Z
  */
 
 (function (global, factory) {
@@ -386,13 +386,13 @@
   var EVENT_ZOOM = 'zoom';
   var EVENT_ZOOMED = 'zoomed';
   var EVENT_PLAY = 'play';
-  var EVENT_STOP = 'stop'; // Data keys
+  var EVENT_STOP = 'stop';
 
   var DATA_ACTION = "".concat(NAMESPACE, "Action"); // RegExps
 
   var REGEXP_SPACES = /\s\s*/; // Misc
 
-  var BUTTONS = ['zoom-in', 'zoom-out', 'one-to-one', 'reset', 'prev', 'play', 'next', 'rotate-left', 'rotate-right', 'flip-horizontal', 'flip-vertical'];
+  var BUTTONS = ['zoom-in', 'zoom-out', 'one-to-one', 'reset', 'prev', 'play', 'next', 'rotate-left', 'rotate-right', 'flip-horizontal', 'flip-vertical', 'download'];
 
   /**
    * Check if the given value is a string.
@@ -1332,6 +1332,8 @@
         clearTimeout(this.clickCanvasTimeout);
       }
 
+      console.log('action', action);
+
       switch (action) {
         case 'mix':
           if (this.played) {
@@ -1398,6 +1400,10 @@
 
         case 'flip-vertical':
           this.scaleY(-imageData.scaleY || -1);
+          break;
+
+        case 'download':
+          this.download();
           break;
 
         default:
@@ -2743,6 +2749,20 @@
         }
       } else {
         this.build();
+      }
+
+      return this;
+    },
+    // 下载图片
+    download: function download() {
+      var index = this.index,
+          options = this.options;
+      var item = this.items[index];
+      var img = item.querySelector('img');
+      var url = getData(img, 'originalUrl');
+
+      if (isFunction(options.download)) {
+        options.download(url);
       }
 
       return this;

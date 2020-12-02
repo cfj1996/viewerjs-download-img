@@ -73,6 +73,7 @@ declare namespace Viewer {
     ready?(event: CustomEvent): void;
     rotatable?: boolean;
     scalable?: boolean;
+    download?(url: string): void;
     show?(event: CustomEvent): void;
     shown?(event: CustomEvent): void;
     slideOnTouch?: boolean;

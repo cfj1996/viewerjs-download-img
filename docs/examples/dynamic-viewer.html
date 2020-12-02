@@ -7,6 +7,7 @@
   <title>Viewer.js</title>
   <link rel="stylesheet" href="https://unpkg.com/bootstrap@4/dist/css/bootstrap.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/viewer.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
   <div class="container">
@@ -16,10 +17,23 @@
     </button>
   </div>
 
+  <div id="app"></div>
+
   <script src="https://unpkg.com/jquery@3/dist/jquery.slim.min.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/bootstrap@4/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script src="../js/viewer.js"></script>
   <script>
+
+
+    new Vue({
+      el: '#app',
+      template: '<h1>{{ hi }}</h1>',
+      data(){
+        return {
+          hi: '你好'
+        }
+      }
+    })
     window.addEventListener('DOMContentLoaded', function () {
       document.getElementById('button').addEventListener('click', function () {
         var image = new Image();
