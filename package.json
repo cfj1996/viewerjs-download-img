@@ -45,10 +45,10 @@
   ],
   "author": {
     "name": "Chen Fengyuan",
-    "url": "https://chenfengyuan.com/"
+    "url": "https://github.com/cfj1996/"
   },
   "license": "MIT",
-  "homepage": "https://fengyuanchen.github.io/viewerjs",
+  "homepage": "https://github.com/cfj1996/viewerjs-download-img",
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/preset-env": "^7.12.7",
