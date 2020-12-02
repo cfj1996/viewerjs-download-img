@@ -51,7 +51,7 @@
     "name": "cfj",
     "url": "https://github.com/cfj1996/"
   },
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://github.com/cfj1996/viewerjs-download-img",
   "devDependencies": {
     "@babel/core": "^7.12.9",
