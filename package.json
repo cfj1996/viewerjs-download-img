@@ -48,10 +48,10 @@
     "web"
   ],
   "author": {
-    "name": "Chen Fengyuan",
+    "name": "cfj",
     "url": "https://github.com/cfj1996/"
   },
-  "license": "MIT",
+  "license": "ISC",
   "homepage": "https://github.com/cfj1996/viewerjs-download-img",
   "devDependencies": {
     "@babel/core": "^7.12.9",
