@@ -146,12 +146,11 @@ export default {
     const i = index || this.index;
     const width = this.items[i].offsetWidth || 30;
     const outerWidth = width + 1; // 1 pixel of `margin-left` width
-
     // Place the active item in the center of the screen
     setStyle(this.list, assign({
       width: outerWidth * this.length,
     }, getTransforms({
-      translateX: ((this.viewerData.width - width) / 2) - (outerWidth * i),
+      translateX: ((this.viewerData.width) / 2 - (this.length * width) / 2),
     })));
   },
 

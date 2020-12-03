@@ -1,5 +1,5 @@
 window.onload = function () {
-  const { Viewer } = window;
+  const { ViewerdownloadimgSbwl } = window;
   const console = window.console || { log() {} };
   const pictures = document.querySelector('.docs-pictures');
   const toggles = document.querySelector('.docs-toggles');
@@ -45,7 +45,7 @@ window.onload = function () {
       console.log(e.type);
     },
   };
-  let viewer = new Viewer(pictures, options);
+  let viewer = new ViewerdownloadimgSbwl(pictures, options);
 
   function toggleButtons(mode) {
     let targets;

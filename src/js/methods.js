@@ -207,7 +207,7 @@ export default {
    */
   view(index = this.options.initialViewIndex) {
     index = Number(index) || 0;
-
+    console.log(222222);
     if (this.hiding || this.played || index < 0 || index >= this.length
       || (this.viewed && index === this.index)) {
       return this;
