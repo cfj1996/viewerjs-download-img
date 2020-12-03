@@ -1,17 +1,17 @@
 /*!
- * Viewer.js v1.8.0
- * https://fengyuanchen.github.io/viewerjs
+ * ViewerdownloadimgSbwl.js v1.1.0
+ * https://github.com/cfj1996/viewerjs-download-img
  *
- * Copyright 2015-present Chen Fengyuan
+ * Copyright 2015-present cfj1996
  * Released under the MIT license
  *
- * Date: 2020-12-02T10:31:18.557Z
+ * Date: 2020-12-03T02:09:04.383Z
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Viewer = factory());
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.ViewerdownloadimgSbwl = factory());
 }(this, (function () { 'use strict';
 
   function _typeof(obj) {
@@ -1143,7 +1143,7 @@
       setStyle(this.list, assign({
         width: outerWidth * this.length
       }, getTransforms({
-        translateX: (this.viewerData.width - width) / 2 - outerWidth * i
+        translateX: this.viewerData.width / 2 - this.length * width / 2
       })));
     },
     resetList: function resetList() {
@@ -1953,6 +1953,7 @@
 
       var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.options.initialViewIndex;
       index = Number(index) || 0;
+      console.log(222222);
 
       if (this.hiding || this.played || index < 0 || index >= this.length || this.viewed && index === this.index) {
         return this;
