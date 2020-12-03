@@ -2,9 +2,9 @@
   "name": "viewerdownloadimg-sbwl",
   "description": "JavaScript image viewer download img",
   "version": "1.1.0",
-  "main": "dist/viewer.common.js",
-  "module": "dist/viewer.esm.js",
-  "browser": "dist/viewer.js",
+  "main": "dist/viewerdownloadimg-sbwl.common.js",
+  "module": "dist/viewerdownloadimg-sbwl.esm.js",
+  "browser": "dist/viewerdownloadimg-sbwl.js",
   "style": "dist/viewer.css",
   "types": "types/index.d.ts",
   "files": [
