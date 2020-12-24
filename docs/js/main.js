@@ -86,7 +86,7 @@ window.onload = function () {
       name = input.getAttribute('name');
       options[name] = name === 'inline' ? JSON.parse(input.getAttribute('data-value')) : input.checked;
       viewer.destroy();
-      viewer = new Viewer(pictures, options);
+      viewer = new ViewerdownloadimgSbwl(pictures, options);
       toggleButtons(options.inline ? 'inline' : 'modal');
     }
   };

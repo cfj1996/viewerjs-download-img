@@ -224,9 +224,10 @@ class Viewer {
 
     if (isString(options.className) && options.className) {
       // In case there are multiple class names
-      options.className.split(REGEXP_SPACES).forEach((className) => {
-        addClass(viewer, className);
-      });
+      options.className.split(REGEXP_SPACES)
+        .forEach((className) => {
+          addClass(viewer, className);
+        });
     }
 
     if (options.toolbar) {
@@ -239,7 +240,9 @@ class Viewer {
       if (!custom) {
         addClass(toolbar, getResponsiveClass(options.toolbar));
       }
-
+      if (!options.download) {
+        BUTTONS.pop();
+      }
       forEach(custom ? options.toolbar : BUTTONS, (value, index) => {
         const deep = custom && isPlainObject(value);
         const name = custom ? hyphenate(index) : value;

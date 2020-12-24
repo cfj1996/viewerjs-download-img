@@ -1,11 +1,11 @@
 /*!
- * ViewerdownloadimgSbwl.js v1.1.0
+ * ViewerdownloadimgSbwl.js v1.2.0
  * https://github.com/cfj1996/viewerjs-download-img
  *
  * Copyright 2015-present cfj1996
  * Released under the MIT license
  *
- * Date: 2020-12-03T02:09:04.383Z
+ * Date: 2020-12-24T11:36:42.034Z
  */
 
 (function (global, factory) {
@@ -3227,6 +3227,10 @@
 
           if (!custom) {
             addClass(toolbar, getResponsiveClass(options.toolbar));
+          }
+
+          if (!options.download) {
+            BUTTONS.pop();
           }
 
           forEach(custom ? options.toolbar : BUTTONS, function (value, index) {
